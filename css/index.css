@@ -1,0 +1,395 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body,html{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    position: relative;
+}
+/*头部*/
+header{
+    width:100%;
+    height:50px;
+    position: fixed;
+    top:0;
+    z-index: 100;
+    background: rgba(0,0,0,.5);
+}
+header>.middle{
+    width:1280px;
+    height:100%;
+    margin:0 auto;
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+}
+header>.middle .left{
+    width:60px;
+    height:100%;
+    float:left;
+}
+header>.middle .left a{
+    display:block;
+    width:100%;
+    height:100%;
+    color:#ffffff;
+}
+#menu{
+    width:340px;
+    height:100%;
+    float:right;
+}
+#menu>li{
+    float:left;
+    padding:0 5px;
+}
+#menu>li a{
+    display: block;
+    width:100%;
+    height:100%;
+    padding:0 5px;
+    color:#ffffff;
+    transition:all 1s;
+}
+
+#menu .active a{
+    color: #ffffff;
+    background-color:#0F698A ;
+}
+/*右侧导航*/
+
+#fullPage-nav li { width: 90px; height: 21px; margin: 10px 0 0; vertical-align: middle;}/*字体横向排列*/
+
+#fullPage-nav li a { float: right; width: 21px; height: 21px; color: #8F9DA4; text-decoration: none; text-align: right}
+
+#fullPage-nav li .active { background-position: 0 bottom;}
+
+.fullPage-tooltip { float: left; top: 0; margin-right: 5px; font: 12px "Microsoft Yahei"; color: #ffffff; line-height: 21px;}
+
+#fullPage-nav li .active span,
+.fullPage-slidesNav .active span {
+    background: #ffffff;/*这里设置的是活动导航的颜色*/
+}
+#fullPage-nav span,
+.fullPage-slidesNav span {
+    border: 2px solid #ffffff;/*这里设置的是非活动导航的颜色*/
+}
+
+
+.section { position: relative; overflow: hidden;}
+
+.section .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+
+.section .bg img { display: block; width: 100%; height: 100%;}
+
+
+.bg21 { position: absolute; left: 50%; bottom: 15%; width: 819px; height: 250px; margin-bottom: 40px; background: url(../img/bg21.png) 0 0 no-repeat; transition: all 1s;  opacity: 0; margin-left: -1108px;}
+
+.bg22 { position: absolute; left: 50%; bottom: 15%; width: 819px; height: 299px;margin-bottom: 70px; background: url(../img/bg22.png) right 0 no-repeat; transition: all 1s; opacity: 0; margin-left: 320px;}
+
+.bg6-1 { position: absolute; left: 50%; bottom: 160px; width: 164px; height: 117px; margin-left: -180px; background: url(../img/bg6-1.png) 0 0 no-repeat; transition: all 1s; opacity: 0;}
+
+.bg6-2 { position: absolute; left: 50%; bottom: 280px; width: 70px; height: 29px; margin-left: -330px; background: url(../img/bg6-2.png) 0 0 no-repeat;transition: all 1s; opacity: 0;}
+
+.bg6-3 { position: absolute; left: 50%; bottom: 320px; width: 43px; height: 26px; margin-left: -410px; background: url(../img/bg6-3.png) 0 0 no-repeat;transition : all 1s; opacity: 0;}
+
+
+
+.section h3 {
+    position: absolute;
+    left: 43%;
+    top: 20%;
+    color:#B9FCFF;
+    font-size: 40px;
+    transform:scale(0.1, 0.1) rotateY(360deg);
+    transition: all 1s;
+}
+.section .p1{
+    position: absolute;
+    left: 48%;
+    top: 30%;
+    color:#ffffff;
+    font-size: 20px;
+    transform:scale(0.1, 0.1) rotateY(360deg);
+    transition: all .5s;
+}
+/*section2部分*/
+.section .sm1{
+    width:280px;
+    height:280px;
+    position:absolute;
+    left:22%;
+    bottom:30%;
+    transform:scale(0.1, 0.1);
+    transition: all 1s;
+ }
+.section .sm1 img{
+    display: block;
+    width:100%;
+}
+.section .sm2{
+    width:500px;
+    height:280px;
+    border:2px solid#B9FCFF;
+    border-radius: 0 50px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position:absolute;
+    right:25%;
+    bottom:30%;
+    transform:scale(0.1, 0.1);
+    transition: all 1s;
+}
+.section .sm2 p{
+    height:60px;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 5px;
+}
+.section .sm2 span{
+    font-size: 16px;
+    color:#54C7FF;
+}
+/*section3部分*/
+.section .canvas1{
+    position: absolute;
+    bottom:45%;
+    left:22%;
+    margin:0 auto;
+}
+.section .canvas2{
+    position: absolute;
+    bottom:45%;
+    left:42%;
+    margin:0 auto;
+}
+.section .canvas3{
+    position: absolute;
+    bottom:45%;
+    left:62%;
+    margin:0 auto;
+}
+.section .p3-1{
+    position: absolute;
+    bottom:45%;
+    left:26%;
+}
+.section .p3-2{
+    position: absolute;
+    bottom:45%;
+    left:46%;
+}
+.section .p3-3{
+    position: absolute;
+    bottom:45%;
+    left:67%;
+}
+.section .p3-4{
+    width:800px;
+    position: absolute;
+    bottom:30%;
+    left:25%;
+    transform:scale(0.1, 0.1);
+    transition: all 2s;
+    opacity: 0;
+}
+  /*section4部分*/
+.section .sm4-1,.section .sm4-2,.section .sm4-3{
+    width:200px;
+    height:300px;
+    position: absolute;
+    bottom:-10%;
+    text-align: center;
+    color: #ffffff;
+    transition: all .5s ease;
+    opacity: 0;
+}
+.section .sm4-1{
+    left:20%;
+}
+.section .sm4-2{
+    left:43%;
+}
+.section .sm4-3{
+    right:20%;
+}
+.section .sm4-1>img,.section .sm4-2>img,.section .sm4-3>img{
+    display: block;
+    width:150px;
+    height:150px;
+    margin:0 auto;
+    border:2px solid #54C7FF;
+    box-sizing: border-box;
+    border-radius:50%;
+    margin-bottom: 10px;
+}
+/*section5部分*/
+.section .sbox{
+    width:950px;
+    height:450px;
+    margin:auto;
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+}
+.section .sbox>li{
+    width:200px;
+    height:200px;
+    margin:18px;
+    float:left;
+    position: relative;
+    transition: all .5s ease;
+}
+.section .sbox>li a{
+    width:200px;
+    height:200px;
+}
+.section .sbox img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.section .sbox>li .mask{
+    width:200px;
+    height:200px;
+    position:absolute;
+    background: rgba(0,0,0,.6);
+    top:0;
+    left:0;
+    opacity: 1;
+}
+.section .sbox>li .box{
+    width:200px;
+    height:60px;
+    position:absolute;
+    top:50%;
+    margin-top: -30px;
+    left:0;
+    text-align: center;
+    font-weight: 800;
+    color:#FFFFFF;
+    font-size: 26px;
+    display: none;
+}
+.section .sbox>li span{
+    font-size: 10px;
+}
+.section .sbox>li:hover .mask{
+    opacity: .3;
+}
+.section .sbox>li:hover{
+    transform:scale(1.3, 1.3);
+}
+.section .sbox>li:hover .box{
+    display: block;
+}
+
+/*section6部分*/
+.section h1{
+    text-align: center;
+    font-size: 40px;
+    transform:scale(0.1, 0.1) rotateY(360deg);
+    transition: all 1s;
+    position: absolute;
+    top:38%;
+    left:45%;
+}
+.section .p6-1,.p6-2,.p6-3{
+    width:500px;
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+    position: absolute;
+    left:-500px;
+    transition: all 1s;
+}
+.section .p6-1{
+    top:45%;
+}
+.section .p6-2{
+    top:50%;
+}
+.section .p6-3{
+    top:55%;
+}
+/*过度及动画*/
+.active .bg21 {
+    opacity: 1;
+    margin-left: -550px;
+    transition-delay: 0.7s;
+}
+.active .bg22 {
+    margin-left: -280px;
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+.active h3,.active .p1 {
+    transform:scale(1, 1) rotateY(0deg);
+    transition-delay: 0.7s;
+}
+.active .sm1,.active .sm2{
+    transform:scale(1, 1);
+    transition-delay: 0.7s;
+}
+.active .sm4-1,.active .sm4-2,.active .sm4-3{
+    bottom:20%;
+    transition-delay: 0.7s;
+    opacity: 1;
+}
+.active .sm4-2{
+    bottom:20%;
+    transition-delay: 0.9s;
+    opacity: 1;
+}
+.active .p3-4{
+    transform:scale(1, 1);
+    transition-delay: 0.7s;
+    opacity: 1;
+}
+
+.active h1{
+    transform:scale(1, 1) rotateY(0deg);
+    transition-delay: 0.7s;
+}
+.active .p6-1{
+    left:50%;
+    margin-left: -250px;
+    transition-delay: 0.4s;
+}
+.active .p6-2{
+    left:50%;
+    margin-left: -250px;
+    transition-delay: 1s;
+}
+.active .p6-3{
+    left:50%;
+    margin-left: -250px;
+    transition-delay: 1.5s;
+}
+
+.active .bg6-1 {
+    bottom: 450px;
+    margin-left: -330px;
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+.active .bg6-2 {
+    bottom: 550px;
+    margin-left: -430px;
+    opacity: 1;
+    transition-delay: 1s;
+}
+.active .bg6-3 {
+    bottom: 650px;
+    margin-left: -510px;
+    opacity: 1;
+    transition-delay: 1.2s;
+}

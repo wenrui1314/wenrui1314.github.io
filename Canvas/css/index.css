@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+body,html{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.palette{
+    width:100%;
+    height:100%;
+    background: #CAD4E3;
+    overflow: hidden;
+    position:relative;
+}
+.palette .function{
+    width:100%;
+    height:60px;
+    border-bottom: 1px solid #439CF8;
+    box-sizing: border-box;
+}
+.palette>.tool{
+    width:140px;
+    height:600px;
+}
+.palette>.right{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right: 0;
+    margin-left: 140px;
+    margin-top: 60px;
+}
+canvas{
+    background: #fff;
+    border-right: 1px solid #9B9B9B;
+    box-sizing:border-box;
+}
+.palette .mask{
+    width:1000px;
+    height:600px;
+    position: absolute;
+    border: 1px solid #9B9B9B;
+    box-sizing:border-box;
+    top:0;
+    left:0;
+    z-index: 10;
+    box-shadow: 2px 2px 3px 2px #ABB8CA;
+
+}
+.palette .right .eraserBtn{
+    width:50px;
+    height:50px;
+    border:2px solid #C1FAFA;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top:0;
+    left:0;
+    /*z-index: 100;*/
+    display:none;
+}
+.palette .right .clipBtn{
+    width:50px;
+    height:50px;
+    border:2px solid #C1FAFA;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top:0;
+    left:0;
+    /*z-index: 100;*/
+    display:none;
+}
+.tool lable{
+    width:40px;
+    height:40px;
+    float:left;
+    margin:13px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    color:dodgerblue;
+    background: -webkit-linear-gradient(top,#CBFAFA 10%, #CAD4E3 50%, #CEDEFC 100%);
+}
+.tool hr{
+    background: -webkit-linear-gradient(left,#ED1C24 10%, #FFF200 30%, #12F731 50%,#240AA5 70%, #F21FDB 90%);
+}
+.function lable{
+    width:40px;
+    height:40px;
+    float:left;
+    margin:13px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    color:dodgerblue;
+}
+.function lable:nth-child(5){
+    width:200px;
+    margin-top: 5px;
+}

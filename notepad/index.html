@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;
+    }
+    body,html{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url(img/ly.png) no-repeat;
+        background-size: cover;
+    }
+    header{
+        width:100%;
+        height:80px;
+        overflow: hidden;
+    }
+    header>input{
+        display: block;
+        margin:20px auto;
+        padding:10px 180px 10px 10px;
+    }
+    section{
+        width:500px;
+        height:auto;
+        background: #D7FFF7;
+        margin:30px auto;
+    }
+    h3{
+        width:400px;
+        height:25px;
+        margin:0px auto;
+        padding-top: 10px;
+        position: relative;
+    }
+    h3>span{
+        width:25px;
+        height:25px;
+        background: #D7FFF7;
+        border-radius: 50%;
+        position: absolute;
+        top:10px;
+        right:5px;
+        text-align: center;
+        line-height: 25px;
+    }
+    section>ul,ol{
+        width:400px;
+        height:auto;
+        margin:10px auto;
+        /*overflow: hidden;*/
+    }
+    section li{
+        width:100%;
+        height:auto;
+        background: #DDA9B6;
+        margin:0 auto 10px;
+        line-height:50px;
+        overflow: hidden;
+    }
+    p{
+        width:360px;
+        height:20px;
+        background: #F2E0F0;
+        display: inline-block;
+        margin-top: 10px;
+        line-height: 20px;
+    }
+    button{
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        border:none;
+        outline:none;
+    }
+</style>
+<body>
+     <header>
+         <input type="text" placeholder="添加事项" id="input">
+     </header>
+     <section>
+         <h3>未完成得事情<span id="todoCount">2</span></h3>
+         <ul class="todoList">
+             <!--<li>-->
+                 <!--<input type="checkbox">-->
+                 <!--<p contenteditable="true"></p>-->
+                 <!--<button>×</button>-->
+             <!--</li>-->
+             <!--<li>-->
+                 <!--<input type="checkbox">-->
+                 <!--<p contenteditable="true"></p>-->
+                 <!--<button>×</button>-->
+             <!--</li>-->
+         </ul>
+         <h3>已完成得事情<span id="doneCount">2</span></h3>
+         <ol class="doneList">
+             <!--<li >-->
+                 <!--<input type="checkbox">-->
+                 <!--<p contenteditable="true"></p>-->
+                 <!--<button>×</button>-->
+             <!--</li>-->
+             <!--<li>-->
+                 <!--<input type="checkbox">-->
+                 <!--<p contenteditable="true"></p>-->
+                 <!--<button>×</button>-->
+             <!--</li>-->
+         </ol>
+     </section>
+      
+</body>
+</html>
+<script>
+    let todo=document.querySelector('.todoList');
+    let done=document.querySelector('.doneList');
+    let todoCount=document.querySelector('#todoCount');
+    let doneCount=document.querySelector('#doneCount');
+    let input=document.querySelector('#input');
+
+    load();
+    //add
+    input.onkeydown=function(e){
+        if(e.keyCode==13){
+            add({title:this.value.trim(),done:false});
+            this.value='';
+        }
+    }
+
+    //done
+    todo.onclick=function(e){
+        let obj=e.target;
+        if(obj.nodeName == 'INPUT'){
+            // done  false->true
+            let id= obj.parentNode.id;
+            finish(id);
+        }else if(obj.nodeName == 'BUTTON' ){
+            let id= obj.parentNode.id;
+            del(id);
+        }else if(obj.nodeName == 'P'){
+            obj.onblur=function(){
+                let id=obj.parentNode.id;
+                let olv=obj.innerText;
+                update(id,olv);
+            }
+        }
+    }
+    //undone
+    done.onclick=function(e){
+        let obj=e.target;
+        if(obj.nodeName == 'INPUT'){
+            let id= obj.parentNode.id;
+            unfinish(id);
+        }else if(obj.nodeName == 'BUTTON' ){
+            let id= obj.parentNode.id;
+            del(id);
+        }else if(obj.nodeName == 'P'){
+            obj.onblur=function(){
+                let id=obj.parentNode.id;
+                let olv=obj.innerText;
+//                obj.innerText=olv.trim()?olv.trim():olv;
+                update(id,olv);
+            }
+        }
+    }
+    function load(){
+        let data=localStorage.todo;
+        let todoString='',doneString='',todoNum=0,doneNum=0;
+        if(!data){
+            init();
+        }
+        data=JSON.parse(localStorage.todo)
+        data.forEach(function(value,index){
+            if(value.done){
+                //done
+                doneNum++;
+                doneString+=`
+                  <li id="${index}">
+                       <input type="checkbox">
+                        <p contenteditable="true">${value.title}</p>
+                        <button>×</button>
+                  </li>
+                  `;
+            }else{
+                //todo
+                todoNum++;
+                todoString+=`
+                   <li id="${index}">
+                       <input type="checkbox">
+                        <p contenteditable="true">${value.title}</p>
+                        <button>×</button>
+                  </li>
+                `
+            }
+        })
+        done.innerHTML=doneString;
+        todo.innerHTML=todoString;
+        doneCount.innerHTML=doneNum;
+        todoCount.innerHTML=todoNum;
+    }
+
+    function init(){
+        let things=[
+             {title:'买车子',done:false},
+             {title:'买房子',done:false},
+             {title:'买衣服',done:true},
+             {title:'买婚戒',done:true}
+             ]
+        localStorage.todo=JSON.stringify(things);
+    }
+
+    function getData(){
+        let data=localStorage.todo;
+        return JSON.parse(data);
+    }
+
+    function saveData(data){
+        localStorage.todo= JSON.stringify(data);
+    }
+
+    //添加
+    function add(obj){
+        let data=getData();
+        data.push(obj);
+        saveData(data);
+        load();
+    }
+    function finish(id){
+        let data=getData();
+        data[id].done = true;
+        saveData(data);
+        load();
+    }
+    function unfinish(id){
+        let data=getData();
+        data[id].done = false;
+        saveData(data);
+        load();
+    }
+    //删除
+    function del(id){
+        let data=getData();
+        data.splice(id,1);
+        saveData(data);
+        load();
+    }
+    function update(id,oldv){
+        let data=getData();
+        data[id].title=oldv;
+        saveData(data);
+        load();
+    }
+</script>

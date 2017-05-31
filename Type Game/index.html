@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏</title>
+</head>
+<style>
+    .back{
+        width:100%;
+        height:100%;
+        background: url(img/aa.jpg);
+        background-size:cover;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .left{
+        width:150px;
+        height:40px;
+        text-align: center;
+        position:absolute;
+        top:0;
+        left:0;
+    }
+    .left>div{
+        width:100%;
+        height:50%;
+        overflow: hidden;
+    }
+    .span{
+        display: inline-block;
+        float:left;
+    }
+    .left .son1,.son2{
+        width:110px;
+        height:15px;
+        border-radius: 5px;
+        float:right;
+        background: red;
+        margin-top: 5px;
+        position: relative;
+    }
+    .left .life{
+        width: 100%;
+        height:100%;
+        background: greenyellow;
+        border-radius: 5px;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .score{
+        width: 100%;
+        height:100%;
+        background: greenyellow;
+        border-radius: 5px;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .yun{
+        width:1130px;
+        height:100px;
+        background: url(img/yun.png) center center repeat;
+        background-size: contain;
+        position: absolute;
+        top:0;
+        left:160px;
+        z-index: 180;;
+        animation:yun 2s ease-in-out infinite alternate;
+    }
+    @keyframes yun{
+        100%{
+            transform:translateX(100px);
+        }
+    }
+</style>
+<body>
+<div class="back">
+    <div class="left">
+        <div>
+            生命
+            <div class="son1">
+                <div class="life"></div>
+            </div>
+
+        </div>
+        <div>
+            得分
+            <div class="son2">
+                <div class="score">0</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="yun">
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    function Game(){
+        this.charArr=[
+            ['A','img/a.jpg'],
+            ['B','img/b.jpg'],
+            ['C','img/c.jpg'],
+            ['D','img/d.jpg'],
+            ['E','img/e.jpg'],
+            ['F','img/f.jpg'],
+            ['G','img/g.jpg'],
+            ['H','img/h.jpg'],
+            ['I','img/i.jpg'],
+            ['J','img/j.jpg'],
+            ['K','img/k.jpg'],
+            ['L','img/l.jpg'],
+            ['M','img/m.jpg'],
+            ['N','img/n.jpg'],
+            ['O','img/o.jpg'],
+            ['P','img/p.jpg'],
+            ['Q','img/q.jpg'],
+            ['R','img/r.jpg'],
+            ['S','img/s.jpg'],
+            ['T','img/t.jpg'],
+            ['U','img/u.jpg'],
+            ['V','img/v.jpg'],
+            ['W','img/w.jpg'],
+            ['X','img/x.jpg'],
+            ['Y','img/y.jpg'],
+            ['Z','img/z.jpg']
+        ];
+        this.charLength=5;
+        this.cw=window.innerWidth;
+        this.currentEle=[];
+        this.currentPos=[];
+        this.speed=10;
+        this.score=0;
+        this.sm=10;
+        this.gq=10;
+        this.scoreElement=document.querySelector('.score');
+        this.smElement=document.querySelector('.life');
+    }
+    //原型对象
+    Game.prototype={
+        start:function(){
+            this.getElements(this.charLength);
+        },
+        getElements:function(){
+            for(let i=0;i<this.charLength;i++){
+                this.getChar();
+            }
+            this.drop();
+        },
+        checkRepeat:function(text){
+            return this.currentEle.some(function(value){
+                return value.innerText==text;
+            })
+        },
+        checkPos:function(lefts){
+            return this.currentPos.some(function(value){
+                return (value+50>lefts&&lefts+50>value);
+            })
+        },
+        getChar:function(){
+            let num=Math.floor(Math.random()*this.charArr.length);
+            while(this.checkRepeat(this.charArr[num][0])){
+                num=Math.floor(Math.random()*this.charArr.length);
+            }
+            let lefts=Math.random()*(this.cw-400)+200;
+            while(this.checkPos(lefts)){
+                lefts=Math.random()*(this.cw-400)+200;
+            }
+            let ele=document.createElement("div");
+            let tops=Math.random()*100;
+            ele.style.cssText=`width:60px;height:60px;border-radius:5px;border:2px solid greenyellow;line-height:50px;
+               background-image:url(${this.charArr[num][1]});background-position:center;background-size:cover;font-size:0px;position:absolute;left:${lefts}px;top:${tops}px;`    // ele 样式
+            ele.innerText=this.charArr[num][0];   //
+            document.body.appendChild(ele);
+            this.currentEle.push(ele);
+            this.currentPos.push(lefts);
+        },
+        drop:function(){
+            let self=this;
+            self.t=setInterval(function(){
+                for(let i=0;i<self.currentEle.length;i++){
+                    let tops=self.currentEle[i].offsetTop+self.speed;
+                    self.currentEle[i].style.top=tops+'px';
+                    if(tops>500){
+                        document.body.removeChild(self.currentEle[i]);
+                        self.currentEle.splice(i,1); //删除  1：数量
+                        self.currentPos.splice(i,1);
+                        self.sm--;
+                        self.smElement.style.width=self.sm/10*100+'%';
+                        //重新开始
+                        if(self.sm==0){
+                            setTimeout(function(){
+                                let flag=window.confirm('游戏结束，是否继续');
+                                if(flag){
+                                    self.restart();
+                                }else{
+                                    close();
+                                }
+                            },0)
+                        }
+                    }
+                }
+                if(self.currentEle.length<self.charLength){
+                    self.getChar();
+                }
+            },400)
+            this.key();
+        },
+        key:function(){
+            document.body.onkeydown=function(e){
+                let code=String.fromCharCode(e.keyCode)
+                for(let i=0;i<this.currentEle.length;i++){
+                    if(code==this.currentEle[i].innerText) {
+                        document.body.removeChild(this.currentEle[i]);
+                        this.currentEle.splice(i,1); //删除  1：数量
+                        this.currentPos.splice(i,1);
+                        this.score++;
+                        this.scoreElement.innerText=this.score;
+                        if(this.score==this.gq){
+                            this.next();
+                        }
+                    }
+                }
+                if(this.currentEle.length<this.charLength){
+                    this.getChar();
+                }
+            }.bind(this);
+        },
+        restart:function(){
+            clearInterval(this.t);
+            for(let i=0;i<this.currentEle.length;i++){
+                document.body.removeChild(this.currentEle[i]);
+            }
+            this.currentEle=[];
+            this.currentPos=[];
+            this.score=0;
+            this.scoreElement.innerText=this.score;
+            this.sm=10;
+            this.smElement.style.width=this.sm/10*100+'%';
+            this.start();
+        },
+        next:function(){
+            clearInterval(this.t);
+            for(let i=0;i<this.currentEle.length;i++){
+                document.body.removeChild(this.currentEle[i]);
+            }
+            this.currentEle=[];
+            this.currentPos=[];
+            this.charLength++;
+            this.gq+=10;
+            this.start();
+        }
+    }
+    let game=new Game()
+    game.start();
+</script>

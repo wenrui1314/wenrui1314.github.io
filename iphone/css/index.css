@@ -1,0 +1,611 @@
+/*
+* @Author: Administrator
+* @Date:   2017-03-20 17:33:04
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-04-11 21:40:24
+*/
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/* 头部开始 */
+header{
+	width: 100%;
+	height: 44px;
+	background: #444444;
+}
+header .tou{
+	width: 976px;
+	height: 44px;
+	margin: 0 auto;
+	line-height: 44px;
+	text-align: right;
+
+}
+header .tou span{
+	color: #A8A8AA;
+	font-size: 12px;
+
+}
+/* 头部结束 */
+/* 导航部分开始 */
+.wheel{
+	width: 100%;
+	height: 540px;
+	position: relative;
+	
+	
+}
+.wheel .nav{
+	width: 100%;
+	height: 44px;
+	background: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+.wheel .nav .con1{
+	width: 1000px;
+	height: 44px;
+	margin: 0 auto;
+	line-height: 44px;
+	text-align: justify;
+}
+.wheel .nav .con1 a{
+	display: inline-block;
+	color: #FFFFFF;
+	font-size: 12px;
+
+}
+.wheel .nav .con1:after{
+	content:"";
+	width: 100%;
+	display: inline-block;
+}
+.wheel .nav .con2{
+	width: 1000px;
+	height: 44px;
+	display: block;
+	text-align: justify;
+	line-height: 44px;
+}
+.wheel .nav .con2 a{
+	display: inline-block;
+}
+.wheel .nav .con2:after{
+	content:"";
+	width: 100%;
+	display: inline-block;
+}
+.wheel .nav .con2 a:nth-of-type(1){
+	color: #CAC3C3;
+	font-size: 30px;
+}
+.wheel .nav .con2{
+		display: none;
+	}
+.wheel .wheel-img{
+	width: 100%;
+	height: 100%;
+}
+.wheel .wheel-img a{
+	display: block;
+	width: 100%;
+	height:100%;
+	background-image: url(../img/iphone7_large.png);
+	background-size: contain; 
+	background-repeat: no-repeat;
+	background-position: center 200px;
+	background-color: #CC3341;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.wheel .word{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 80px;
+	left: 0;
+	text-align: center;
+	color: #FFFFFF;
+}
+.wheel .word h3{
+	font-size: 24px;
+	padding: 14px 0;
+} 
+
+.wheel .word h4{
+	font-size: 38px;
+} 
+.wheel .left,.wheel .right{
+	width: 300px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.wheel .left{
+	left: 0;
+}
+.wheel .left>div,.wheel .right>div{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 64px;
+	background: rgba(180, 180, 180, 0.8);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	font-size: 30px;
+	opacity: 0;
+	transition: all 1s ease;
+}
+.wheel .left>div{
+	left: 20px;
+}
+.wheel .right>div{
+	right: 20px;
+}
+.wheel .bth:hover div{
+	opacity: .2;
+}
+/* 导航部分结束 */
+/* 图片展示部分开始 */
+    /* 第一种样式 */
+.box1{
+	width: 100%;
+	height: 198px;
+	margin: 1px 0;	
+}
+.box1 ul li{
+	width: 24.8%;
+	height: 198px;
+	margin-right:1px;
+	float: left;
+}
+.box1 ul li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	float: left;
+}
+.box1 ul li:nth-child(1) a{
+	background: url(../img/w_large.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box1 ul li:nth-child(2) a{
+	background: url(../img/i_large.jpg) center center no-repeat;
+    background-size:auto 100%;
+}
+.box1 ul li:nth-child(3) a{
+	background: url(../img/a_large.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box1 ul li:nth-child(4) a{
+	margin-right: 0;
+	background: url(../img/s_large.jpg) center center no-repeat;
+	background-size:auto 100%;
+}
+   /* 第二种样式 */
+.box2{
+	width: 100%;
+	height: 400px;
+	margin: 1px 0;
+	display: none;	
+}
+.box2 ul li{
+	width: 49.8%;
+	height: 198.4px;
+	margin:1px 1px 1px 0;
+	float: left;
+}
+.box2 ul li:nth-last-child(1){
+	margin-top: 0;
+}
+.box2 ul li:nth-last-child(2){
+	margin-top: 0;
+}
+.box2 ul li a{
+	width: 100%;
+	height: 100%;
+	float: left;
+	display: block;
+}
+.box2 ul li:nth-child(1) a{
+	background: url(../img/w_medium.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box2 ul li:nth-child(2) a{
+	background: url(../img/i_medium.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box2 ul li:nth-child(3) a{
+	background: url(../img/a_medium.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box2 ul li:nth-child(4) a{
+	margin-right: 0;
+	background: url(../img/s_medium.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+   /* 第三种样式 */
+.box3{
+	width:100%; 
+	height:800px;
+	margin:1px 0; 
+	display: none;
+}
+.box3 ul li{
+	width: 100%;
+	height: 199px;
+	margin-top: 1px;
+	float: left;
+}
+.box3 ul li:nth-last-child(1){
+	margin-bottom: 0;
+}
+.box3 ul li a{
+	width: 100%;
+	height: 100%;
+	float: left;
+	display: block;
+}
+.box3 ul li:nth-child(1) a{
+	background: url(../img/w_small.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box3 ul li:nth-child(2) a{
+	background: url(../img/i_small.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box3 ul li:nth-child(3) a{
+	background: url(../img/a_small.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+.box3 ul li:nth-child(4) a{
+	margin-right: 0;
+	background: url(../img/s_small.jpg) center center no-repeat;
+	background-size: auto 100%;
+}
+/* 图片展示部分结束 */
+
+/* 文字说明部分开始 */
+.bar{
+	width: 100%;
+	margin: 0 auto;
+
+}
+.bar .text{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;	
+	text-align: left;
+	border-bottom: 1px solid #D6D6D6;
+	padding:15px 0;
+}
+.bar .text span{
+	font-size: 12px;
+	color: #888888;
+	
+}
+/* 文字说明部分结束 */
+/* 底部开始 */
+.foot{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.foot .foot1{
+	width:1000px;
+	height: auto;
+	margin: 0 auto;
+}
+.foot .foot1 ul{
+	width:20%;
+	height: auto;
+	float: left;
+	position: relative;
+	margin-top: 10px;
+}
+.foot .foot1 ul li{
+	margin-top: 8px;
+	font-size: 12px;
+	
+}
+.foot .foot1 ul li a{
+	font-size: 12px;
+	color: #555555;
+}
+
+.foot .foot2{
+	width: 100%;
+	height:268.8px ;
+	padding-top: 20px;
+	display: none;
+}
+
+.foot .foot2 ul li{
+	width: 100%;
+	height: 37.6px;
+	text-align: left;
+	line-height: 37.6px;
+}
+.foot .foot2 ul li a{
+	display: block;
+	width:100%;
+	height:100%;
+	margin:0 20px;
+	font-size: 12px;
+	color: #555555;
+	border-bottom: 1px solid #CACBCF;
+}
+
+/* 底部结束 */
+/* 尾部开始 */
+.bottom{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 40px;
+}
+.bottom .bottom1{
+	width: 1000px;
+	height: 24px;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+	margin-top: 5px;
+	border-bottom: 1px solid#D6D6D6;
+} 
+.bottom .bottom1 a{
+    color: #0088CC;
+}
+.bottom span{
+    color: #888888;
+}
+.bottom .bottom2{
+	width: 1000px;
+	height: 24px;
+	margin: 0 auto;
+}
+.bottom .bottom2 .zuo{
+	width: 270px;
+	height: 24px;
+	float: left;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+}
+.bottom .bottom2 .zhong{
+	width: 324px;
+	height: 24px;
+	float: left;
+}
+.bottom .bottom2 .zhong a{
+	 font-size: 12px;
+	 color: #888888;
+}
+.bottom .bottom2 .you{
+	width: 60px;
+	height: 24px;
+	float: right;
+	 text-align: right;
+	 line-height: 24px;
+}
+.bottom .bottom2 .you a{
+	 font-size: 12px;
+
+}
+.bottom .bottom3{
+	width: 1000px;
+	height: 24px;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+} 
+.bottom .bottom3 a{
+    color: #888888;
+}
+
+
+.root{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 40px;
+	display: none;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.root .root1{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+	margin-top: 5px;
+
+} 
+.root .root1 a{
+    color: #0088CC;
+}
+.root .root1 span{
+    color: #888888;
+}
+.root .root2{
+	width: 100%;
+	height: 24px;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+} 
+.root .root2 a{
+    color: #888888;
+}
+
+.root .root3{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+} 
+.root .root3 span{
+    color: #888888;
+}
+
+.root .root4{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+} 
+.root .root4 a{
+    color: #888888;
+}
+
+.root .root5{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: left;
+	line-height: 24px;
+} 
+.root .root5 span{
+    color: #888888;
+}
+.root .root5 a{
+    color: #888888;
+}
+
+/* 尾部结束 */
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1000px){
+	
+	.wheel .nav .con1{
+		width: 100%;
+		padding:0 20px; 
+		box-sizing: border-box;
+    }
+	header .tou{
+		width: 100%;
+		padding:0 20px;
+		box-sizing: border-box; 
+	}	
+	.wheel .wheel-img a{
+	background-image: url(../img/iphone7_medium.png);
+   }
+	.wheel .word h3{
+	font-size: 21px;
+	padding: 14px 0;
+   } 
+   .wheel .word h4{
+	font-size: 31px;
+    }
+	/* 图片展示部分 */
+	.box1{
+		display: none;
+	}
+	.box2{
+		display: block;
+	}
+	.box3{
+		display: none;
+	}
+	.bar .text{
+		width: 100%;
+		padding:15px 20px;
+		box-sizing: border-box; 
+	}
+	/* 底部 */
+	.foot .foot1{
+	width:100%;
+	height: auto;
+	margin: 0 auto;
+	padding:0 20px;
+	box-sizing: border-box; 
+	display: block;
+	}
+	.bottom{
+		padding:0 20px;
+	}
+}
+
+@media screen and (max-width:770px){
+	.wheel .nav .con2{
+		width: 100%;
+		padding:0 20px; 
+		box-sizing: border-box;
+		display: block;
+	}
+	.wheel .nav .con1{
+		display: none;
+	}
+	.wheel .wheel-img a{
+	background-image: url(../img/iphone7_small.png);
+   }
+	/* 图片展示部分 */
+	.box2{
+		display: none;
+	}
+    .box3{
+		display: block;
+	}
+
+	/* 底部文字部分 */
+    .foot .foot1{
+	width:1000px;
+	height: auto;
+	margin: 0 auto;
+	display: none;
+}
+	.foot .foot2{
+	width: 100%;
+	height:268.8px ;
+	padding-top: 20px;
+	display: block;
+}
+
+	/* 最底部开始 */
+	.bottom{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 40px;
+	display: none;
+	padding:0 20px;
+}
+	.root{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 40px;
+	display: block;
+}
+
+}
+

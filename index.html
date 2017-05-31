@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/criclecanvas.js"></script>
+    <script>
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    continuousVertical: true,  //循环演示
+                    navigation: true,//右侧导航按钮
+                    slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90','#1bbc9b', '#4BBFC3'],
+                    anchors: ['page1', 'page2', 'page3', 'page4','page5', 'page6'],
+                    menu:'#menu',
+                    navigationTooltips: ['个人简历', '基本资料', '专业技能', '工作经历', '项目经验','自我评价'],
+                    afterLoad:function(anchorLink,index){
+                        if(anchorLink=='page3'){
+                            circlesport(100,100,60,98,'canvas1')
+                            circlesport(100,100,60,80,'canvas2')
+                            circlesport(100,100,60,80,'canvas3')
+                        }
+                    }
+                });
+            });
+
+    </script>
+</head>
+<body>
+
+<div id="fullpage">
+    <header>
+        <div class="middle">
+            <div class="left"><a data-menuanchor="page1" href="#page1">Wen Rui</a></div>
+            <ul id="menu">
+                <li data-menuanchor="page2" class="active">
+                    <a href="#page2">基本资料</a>
+                </li>
+                <li data-menuanchor="page3">
+                    <a href="#page3">专业技能</a>
+                </li>
+                <li data-menuanchor="page4">
+                    <a href="#page4">工作经历</a>
+                </li>
+                <li data-menuanchor="page5">
+                    <a href="#page5">项目经验</a>
+                </li>
+                <li data-menuanchor="page6">
+                    <a href="#page6">自我评价</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="section section1">
+        <div class="bg"><img src="img/s1.jpg" alt=""></div>
+        <h3>前端工程师 简历</h3>
+        <p class="p1">爱技术 爱生活</p>
+    </div>
+
+    <div class="section section2">
+        <div class="bg"><img src="img/section2.jpg" alt=""></div>
+        <div class="bg21"></div>
+        <div class="bg22"></div>
+        <h3>基 本 资 料</h3>
+        <div class="sm1"><img src="img/sm21.png" alt=""></div>
+        <div class="sm2">
+            <p><span>基本信息：</span><br>姓名：温瑞 性别：女 年龄：26</p>
+            <p><span>毕业情况：</span><br>毕业学校：天津职业大学 大专 专业：人力资源与管理</p>
+            <p><span>联系方式：</span>15513856327<br><span>邮箱：</span>2524359505@qq.com</p>
+        </div>
+    </div>
+
+    <div class="section section3">
+        <div class="bg"><img src="img/section3.jpg" alt=""></div>
+        <h3>专 业 技 能</h3>
+        <canvas class="canvas1" width="200" height="200"></canvas>
+        <canvas class="canvas2" width="200" height="200"></canvas>
+        <canvas class="canvas3" width="200" height="200"></canvas>
+        <p class="p3-1">HTMl+CSS</p>
+        <p class="p3-2">JS+jQuery</p>
+        <p class="p3-3">Canvas</p>
+        <p class="p3-4">
+            熟练使用 Html Css JavaScript，能够合理完成web端或者移动端页面的编写和维护，<br>
+            思路清晰，结构完整，易于维护和持久化开发，能处理主流浏览器兼容问题。<br>
+            熟练使用原生js, 了解js面向对象原理，闭包以及原型结构，能够合理利用面向对象以及模块化开发,
+            并且能适当完成框架封装。熟练使用 jQuery，并能完成相关项目。
+        </p>
+    </div>
+
+    <div class="section section4">
+        <div class="bg"><img src="img/section4.jpg" alt=""></div>
+        <h3>个 人 经 历</h3>
+        <div class="sm4-1"><img src="img/sm4-1.jpg" alt=""><p>山西安杰信息科技公司<br>前端工程师</p></div>
+        <div class="sm4-2"><img src="img/sm4-2%20.jpg" alt=""><p>山西东远科技有限公司<br>前端工程师</p></div>
+        <div class="sm4-3"><img src="img/sm4-3.jpg" alt=""><p>山西中谷科贸有限公司<br>前端工程师</p></div>
+    </div>
+
+    <div class="section section5">
+        <div class="bg"><img src="img/section3.jpg" alt=""></div>
+        <ul class="sbox">
+            <li>
+                <a href="xiaomi/index.html"><img src="img/1.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>小米</p><span>技术：html+css+js</span>
+                    </div>
+
+                </a>
+
+            </li>
+            <li>
+                <a href="tmall/index.html"><img src="img/2.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>天猫</p><span>技术：html+css+js</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="iphone/index.html"><img src="img/3.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>苹果</p><span>技术：html+css+js</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="notepad/index.html"><img src="img/4.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>留言板</p><span>技术：html+css+jquery</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="Music/index.html"><img src="img/5.png" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>Music Game</p><span>技术：html+css+jquery</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="Type%20Game/index.html"><img src="img/6.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>Typing Game</p><span>技术：html+css+jquery</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="Poker%20Game/poker.html"><img src="img/7.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>Poker Game</p><span>技术：html+css+jquery</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="Canvas/index.html"><img src="img/8.jpg" alt="">
+                    <div class="mask"></div>
+                    <div class="box">
+                        <p>画板</p><span>技术：Canvas</span>
+                    </div>
+                </a>
+
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="section section6">
+        <div class="bg"><img src="img/section2.jpg" alt=""></div>
+        <div class="bg6-1"></div>
+        <div class="bg6-2"></div>
+        <div class="bg6-3"></div>
+        <h1>Focus Me</h1>
+        <p class="p6-1">有责任，工作踏实，性格开朗乐观，积极上进。</p>
+        <p class="p6-2">易和人相处，拥有良好的亲和力。</p>
+        <p class="p6-3">喜欢js，非常热爱编程，喜欢钻研新的技术，</br>具有很强的自学能力和良好的学习方法，喜欢研究各种新的框架。</p>
+    </div>
+
+</div>
+</body>
+</html>

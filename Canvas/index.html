@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画板</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+
+</head>
+<body>
+    <div class="palette">
+        <div class="function">
+            <lable for="text" class="iconfont icon-xinjian"></lable>
+            <lable for="text" class="iconfont icon-baocun"></lable>
+            <lable for="text" class="iconfont icon-chexiao"></lable>
+            <lable for="text" class="iconfont icon-trash"></lable>
+            <!--<lable for="text" class="iconfont icon-upload" type="file"></lable>-->
+            <lable for="text"><input class="inputBtn" type="file"></lable>
+        </div>
+        <div class="tool">
+            <lable for="text" class="iconfont icon-line"></lable>
+            <lable for="text" class="iconfont icon-xuxian"></lable>
+            <lable for="text" class="iconfont icon-qianbi"></lable>
+            <lable for="text" class="iconfont icon-circle"></lable>
+            <lable for="text" class="iconfont icon-juxing"></lable>
+            <lable for="text" class="iconfont icon-yuanjiaojuxing"></lable>
+            <lable for="text" class="iconfont icon-liubianxing"></lable>
+            <lable for="text" class="iconfont icon-wujiaoxing"></lable>
+            <lable for="text" class="iconfont icon-tuoyuan"></lable>
+            <lable for="text" class="iconfont icon-zhijiaosanjiaoxing"></lable>
+            <hr size="3" width="110"  style="margin:0 auto">
+            <lable for="text" class="iconfont icon-youqi" style="color:#FF80C0"></lable>
+            <lable>
+                <input class='tcColor' type="color" value="#FF80C0" style="width:36px;height:36px">
+            </lable>
+            <lable for="text" class="iconfont icon-miaobian" style="color:#C236FA"></lable>
+            <lable>
+                <input class='mbColor' type="color" value="#C236FA" style="width:36px;height:36px">
+            </lable>
+            <hr size="3" width="110" style="margin:0 auto">
+            <lable for="text" class="iconfont icon-eraser"></lable>
+            <lable for="text" class="iconfont icon-wenzi"></lable>
+            <lable for="text" class="iconfont icon-caijian"></lable>
+        </div>
+        <div class="right">
+            <div class="eraserBtn"></div>
+            <div class="clipBtn"></div>
+            <div class="mask"></div>
+            <canvas width="1000" height="600"></canvas>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="js/palette.js"></script>
+<script src="js/index.js"></script>

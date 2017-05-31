@@ -1,0 +1,175 @@
+/*
+* @Author: Administrator
+* @Date:   2017-03-30 19:50:45
+* @Last Modified by:   L
+* @Last Modified time: 2017-05-02 23:04:37
+*/
+
+/* 百分比 流式 */
+.container-fiuld{
+	width: 100%;
+	height: auto;
+}
+/* 固定 */
+.container{
+	margin: 0 auto;
+}
+
+/* [class*="col-"]{
+	float: left;
+}
+ */
+
+
+@media screen and (max-width:1260px){
+	.container{
+		width: 982px;
+	}
+	.col-md-hid{
+	    display: none;
+	}
+	.col-md-blo{
+		display: block;
+	}
+	.col-md-1{
+		width: 5%;
+	}
+	.col-md-2{
+		width: 10%;
+	}
+	.col-md-3{
+		width: 15%;
+	}
+	.col-md-4{
+		width: 20%;
+	}
+	.col-md-5{
+		width: 25%;
+	}
+	.col-md-6{
+		width: 30%;
+	}
+	.col-md-7{
+		width: 35%;
+	}
+	.col-md-8{
+		width: 40%;
+	}
+	.col-md-9{
+		width:45%;
+	}
+	.col-md-10{
+		width: 50%;
+	}
+	.col-md-11{
+		width: 55%;
+	}
+	.col-md-12{
+		width: 60%;
+	}
+	.col-md-13{
+		width: 65%;
+	}
+	.col-md-14{
+		width: 70%;
+	}
+	.col-md-15{
+		width: 75%;
+	}
+	.col-md-16{
+		width: 80%;
+	}
+	.col-lg-17{
+		width:85%;
+	}
+	.col-md-18{
+		width: 90%;
+	}
+	.col-md-19{
+		width: 95%;
+	}
+	.col-md-20{
+		width: 100%;
+	}
+	.guess-md{
+        
+		height: 290px;
+
+	}
+}
+
+
+
+@media screen and (min-width:1260px){
+	.container{
+		width: 1230px;
+	}
+	.col-lg-hid{
+	    display: none;
+	}
+	.col-lg-1{
+		width: 5%;
+	}
+	.col-lg-2{
+		width: 10%;
+	}
+	.col-lg-3{
+		width: 15%;
+	}
+	.col-lg-4{
+		width: 20%;
+	}
+	.col-xs-5{
+		width: 25%;
+	}
+	.col-lg-6{
+		width: 30%;
+	}
+	.col-lg-7{
+		width: 35%;
+	}
+	.col-lg-8{
+		width: 40%;
+	}
+	.col-lg-9{
+		width:45%;
+	}
+	.col-lg-10{
+		width: 50%;
+	}
+	.col-lg-11{
+		width: 55%;
+	}
+	.col-lg-12{
+		width: 60%;
+	}
+	.col-lg-13{
+		width: 65%;
+	}
+	.col-lg-14{
+		width: 70%;
+	}
+	.col-lg-15{
+		width: 75%;
+	}
+	.col-lg-16{
+		width: 80%;
+	}
+	.col-lg-17{
+		width:85%;
+	}
+	.col-lg-18{
+		width: 90%;
+	}
+	.col-lg-19{
+		width: 95%;
+	}
+	.col-lg-20{
+		width: 100%;
+	}
+	.guess-lg{
+        
+		height: 325px;
+
+	}
+}
